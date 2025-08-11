@@ -1,5 +1,5 @@
 // API URL Web App (Google Apps Script)
-const API_URL = "https://script.google.com/macros/s/AKfycbzhIKUxekdSo52StPKQ6qipOMzWrmJx9--D9SdSSUkcTjAt6JQBp6wla9LuS3vd0lkQVw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxjP8QK2wJysOwUOeE6wJd_3nvkQOuCuZHyFj1sYFfeNJnvayVTat5RGrm73VEcfU6Owg/exec";
 
 // --- JSONP loader for GET (menghindari masalah CORS pada Apps Script) ---
 function loadData() {
