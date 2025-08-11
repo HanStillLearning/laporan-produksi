@@ -1,5 +1,5 @@
 // Ganti URL di bawah ini dengan URL Web App Google Apps Script kamu
-const API_URL = "https://script.google.com/macros/s/AKfycbxFoEvx8fvIRSgYeurxzx-wwShBVd9Qm6vijNqK2Qhfq8LaPS9QWsc_UYv4mxk37lYhTQ/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbw477RyBA5vwT92-YMThjAg6fY44dF1veXJ8D96ld-DDd1p7OuQoX72C1jmeWTFuh-hNw/exec";
 
 document.getElementById("formData").addEventListener("submit", function(e) {
     e.preventDefault();
