@@ -1,77 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan Data Produksi PT XYZ</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background-color: #4B5320; /* Army Green */
-            color: white;
-            padding: 1rem;
-        }
-        form {
-            background-color: white;
-            max-width: 400px;
-            margin: 2rem auto;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        label {
-            display: block;
-            text-align: left;
-            margin: 0.5rem 0 0.2rem;
-        }
-        input {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #4B5320; /* Army Green */
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #3e4520;
-        }
-        .message {
-            margin-top: 1rem;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laporan Data Produksi PT XYZ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Laporan Data Produksi PT XYZ</h1>
-    </header>
-    <form id="dataForm">
-        <label for="nama">Nama</label>
-        <input type="text" id="nama" name="nama" required>
+  <header>
+    <h1>Laporan Data Produksi PT XYZ</h1>
+  </header>
 
-        <label for="tanggal">Tanggal</label>
-        <input type="date" id="tanggal" name="tanggal" required>
+  <main>
+    <section class="form-section">
+      <h2>Tambah / Edit Data</h2>
+      <form id="formData">
+        <input type="hidden" id="rowId" value="">
+        <label>Nama Produk</label>
+        <input type="text" id="nama" required>
+        <label>Tanggal</label>
+        <input type="date" id="tanggal" required>
+        <label>Jumlah Produksi</label>
+        <input type="number" id="produksi" required>
+        <div class="button-row">
+          <button id="saveBtn" type="submit">Simpan</button>
+          <button id="cancelEdit" type="button" class="secondary">Batal</button>
+        </div>
+      </form>
+    </section>
 
-        <label for="produksi">Jumlah Produksi</label>
-        <input type="number" id="produksi" name="produksi" required>
+    <section class="table-section">
+      <h2>Data Produksi</h2>
+      <div id="loading">Memuat data…</div>
+      <table id="dataTable" class="hidden">
+        <thead>
+          <tr><th>No</th><th>Nama</th><th>Tanggal</th><th>Produksi</th><th>Aksi</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
 
-        <button type="submit">Simpan</button>
-        <div class="message" id="message"></div>
-    </form>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
