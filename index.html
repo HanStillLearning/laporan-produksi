@@ -1,46 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Laporan Data Produksi PT XYZ</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Produksi PT XYZ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Laporan Data Produksi PT XYZ</h1>
-  </header>
+    <header>
+        <h1>📊 Dashboard Produksi PT XYZ</h1>
+    </header>
 
-  <main>
-    <section class="form-section">
-      <h2>Tambah / Edit Data</h2>
-      <form id="formData">
-        <input type="hidden" id="rowId" value="">
-        <label>Nama Produk</label>
-        <input type="text" id="nama" required>
-        <label>Tanggal</label>
-        <input type="date" id="tanggal" required>
-        <label>Jumlah Produksi</label>
-        <input type="number" id="produksi" required>
-        <div class="button-row">
-          <button id="saveBtn" type="submit">Simpan</button>
-          <button id="cancelEdit" type="button" class="secondary">Batal</button>
-        </div>
-      </form>
+    <section>
+        <h2>Data Produksi</h2>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Produk</th>
+                    <th>Jumlah</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </section>
 
-    <section class="table-section">
-      <h2>Data Produksi</h2>
-      <div id="loading">Memuat data…</div>
-      <table id="dataTable" class="hidden">
-        <thead>
-          <tr><th>No</th><th>Nama</th><th>Tanggal</th><th>Produksi</th><th>Aksi</th></tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+    <section>
+        <h2>Grafik Produksi</h2>
+        <canvas id="productionChart"></canvas>
     </section>
-  </main>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
