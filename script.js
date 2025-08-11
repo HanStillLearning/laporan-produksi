@@ -1,3 +1,6 @@
+// Ganti URL di bawah ini dengan URL Web App Google Apps Script kamu
+const API_URL = "https://script.google.com/macros/s/AKfycbxFoEvx8fvIRSgYeurxzx-wwShBVd9Qm6vijNqK2Qhfq8LaPS9QWsc_UYv4mxk37lYhTQ/exec";
+
 document.getElementById("formData").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -5,12 +8,24 @@ document.getElementById("formData").addEventListener("submit", function(e) {
     let jumlah = document.getElementById("jumlah").value;
     let tanggal = document.getElementById("tanggal").value;
 
-    let tabel = document.getElementById("tabelData");
-    let barisBaru = tabel.insertRow();
-
-    barisBaru.insertCell(0).innerText = produk;
-    barisBaru.insertCell(1).innerText = jumlah;
-    barisBaru.insertCell(2).innerText = tanggal;
-
-    this.reset();
+    fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify({
+            produk: produk,
+            jumlah: jumlah,
+            tanggal: tanggal
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res => res.text())
+    .then(res => {
+        alert("Data berhasil disimpan ke Google Sheets!");
+        document.getElementById("formData").reset();
+    })
+    .catch(err => {
+        console.error(err);
+        alert("Gagal menyimpan data!");
+    });
 });
