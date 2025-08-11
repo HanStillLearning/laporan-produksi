@@ -1,31 +1,26 @@
-// Ganti URL di bawah ini dengan URL Web App Google Apps Script kamu
-const API_URL = "https://script.google.com/macros/s/AKfycbw477RyBA5vwT92-YMThjAg6fY44dF1veXJ8D96ld-DDd1p7OuQoX72C1jmeWTFuh-hNw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxuiAeWEBxR-zmzJkTgpKZ1XV9KciG6BlG1c1hfXPgW2ZlyYdw9Iqr0tqojzmvSJPeFsg/exec";
 
-document.getElementById("formData").addEventListener("submit", function(e) {
+document.getElementById("dataForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    let produk = document.getElementById("produk").value;
-    let jumlah = document.getElementById("jumlah").value;
-    let tanggal = document.getElementById("tanggal").value;
+    const nama = document.getElementById("nama").value;
+    const tanggal = document.getElementById("tanggal").value;
+    const produksi = document.getElementById("produksi").value;
 
     fetch(API_URL, {
         method: "POST",
-        body: JSON.stringify({
-            produk: produk,
-            jumlah: jumlah,
-            tanggal: tanggal
-        }),
+        body: JSON.stringify({ nama, tanggal, produksi }),
         headers: {
-            "Content-Type": "application/json"
-        }
+            "Content-Type": "application/json",
+        },
     })
-    .then(res => res.text())
-    .then(res => {
-        alert("Data berhasil disimpan ke Google Sheets!");
-        document.getElementById("formData").reset();
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("status").innerText = "✅ Data berhasil dikirim!";
+        document.getElementById("dataForm").reset();
     })
-    .catch(err => {
-        console.error(err);
-        alert("Gagal menyimpan data!");
+    .catch(error => {
+        document.getElementById("status").innerText = "❌ Gagal mengirim data.";
+        console.error(error);
     });
 });
