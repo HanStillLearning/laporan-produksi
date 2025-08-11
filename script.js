@@ -5,7 +5,7 @@ document.getElementById("dataForm").addEventListener("submit", function(e) {
     const tanggal = document.getElementById("tanggal").value;
     const produksi = document.getElementById("produksi").value;
 
-    fetch("https://script.google.com/macros/s/AKfycbxjZNXXOVDMNGoUwpNs3EL-ExrksHk6b7iysr7sL_Vv_c1Of9dY-Lr_jeZB3ZTvehcFaw/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxjP8QK2wJysOwUOeE6wJd_3nvkQOuCuZHyFj1sYFfeNJnvayVTat5RGrm73VEcfU6Owg/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {
