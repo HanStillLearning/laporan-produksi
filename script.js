@@ -1,5 +1,3 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbxuiAeWEBxR-zmzJkTgpKZ1XV9KciG6BlG1c1hfXPgW2ZlyYdw9Iqr0tqojzmvSJPeFsg/exec";
-
 document.getElementById("dataForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -7,20 +5,20 @@ document.getElementById("dataForm").addEventListener("submit", function(e) {
     const tanggal = document.getElementById("tanggal").value;
     const produksi = document.getElementById("produksi").value;
 
-    fetch(API_URL, {
+    fetch("https://script.google.com/macros/s/AKfycbxjZNXXOVDMNGoUwpNs3EL-ExrksHk6b7iysr7sL_Vv_c1Of9dY-Lr_jeZB3ZTvehcFaw/exec", {
         method: "POST",
-        body: JSON.stringify({ nama, tanggal, produksi }),
+        mode: "no-cors",
         headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
         },
+        body: JSON.stringify({ nama, tanggal, produksi })
     })
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("status").innerText = "✅ Data berhasil dikirim!";
+    .then(() => {
+        document.getElementById("message").textContent = "✅ Data berhasil dikirim";
         document.getElementById("dataForm").reset();
     })
     .catch(error => {
-        document.getElementById("status").innerText = "❌ Gagal mengirim data.";
-        console.error(error);
+        document.getElementById("message").textContent = "❌ Gagal mengirim data";
+        console.error("Error:", error);
     });
 });
