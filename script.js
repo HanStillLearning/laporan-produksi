@@ -1,5 +1,5 @@
 // API URL Web App (Google Apps Script)
-const API_URL = "https://script.google.com/macros/s/AKfycbxjP8QK2wJysOwUOeE6wJd_3nvkQOuCuZHyFj1sYFfeNJnvayVTat5RGrm73VEcfU6Owg/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbw_A8vQshYTKY2s84xFvYODTttddPGsmaBntjzmHaZnWnuvpIlWE1Oksk4LhVLKaeL8IQ/exec";
 
 // Utility: escape html
 function escapeHtml(s) {
