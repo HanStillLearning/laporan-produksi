@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Data Produksi PT XYZ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Laporan Data Produksi PT XYZ</h1>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Tambah Data Produksi</h2>
+            <form id="formData">
+                <input type="text" id="produk" placeholder="Nama Produk" required>
+                <input type="number" id="jumlah" placeholder="Jumlah Produksi" required>
+                <input type="date" id="tanggal" required>
+                <button type="submit">Tambah Data</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Data Produksi</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Produk</th>
+                        <th>Jumlah Produksi</th>
+                        <th>Tanggal</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelData">
+                    <tr>
+                        <td>Produk A</td>
+                        <td>100</td>
+                        <td>2025-08-10</td>
+                    </tr>
+                    <tr>
+                        <td>Produk B</td>
+                        <td>250</td>
+                        <td>2025-08-11</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
