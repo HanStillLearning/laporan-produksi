@@ -13,4 +13,4 @@ table{width:100%;border-collapse:collapse;margin-top:8px}
 th,td{padding:8px;border:1px solid #e6e6e6;text-align:left}
 .hidden{display:none}
 .actions button{margin-right:6px;padding:6px 8px;font-size:0.9rem;border-radius:6px}
-.note{font-size:0.9rem;color:#666;margin-top:8px}
+.message{margin-top:8px;font-weight:bold}
